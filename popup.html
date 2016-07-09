@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+ * Copyright (c) 2012 The Chromium Authors. All rights reserved.  Use of this
+ * source code is governed by a BSD-style license that can be found in the
+ * LICENSE file.
+-->
+<html>
+  <head>
+    <style>
+    html { background-color: white; }
+    body { margin:10px; background-color: white; color: #e62117;}
+      #search-container {
+        width: 300px;
+        color: #e62117;
+        background-color: white;
+        font-family: Arial;
+      }
+      #output {
+        color: #d00;
+        text-align: center;
+      }
+      #header {
+        color: white;
+        margin-top: auto;
+        margin-bottom: 20px;
+        min-height: 44px;
+        background-color: #e62117;
+        border: 4px ;
+        text-align-last: center;
+        z-index: 10;
+      }
+      #header:before {
+  background-color:#e62117;
+  position:absolute;
+  content:"";
+  left:0;
+  right:0;
+  height: 74px;
+    top: 0px;
+     z-index: -1; 
+}
+      ul {
+    list-style-type: none;
+}
+#search-button {
+    background-color: #e62117; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+   border-radius: 25px;
+     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+
+    </style>
+    <script src="jquery.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="search.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+  </head>
+  <body>
+    <div id="header">
+    <h1>My Subscribed Channel Videos</h1>
+    </div>
+    <p id='urls' ></p>
+     <div id="login-container" class="pre-auth">
+      This application requires access to your YouTube account.
+      Please <a href="#" id="login-link">authorize</a> to continue.
+    </div>
+      
+     <div id="buttons">
+      <h3>Enter the dates between u would like watch ur fav channel videos</h3>
+      <h2>From:</h1>  <label> <input id="publishAfter-from" value='2016-05-28' type="text"/> </label>
+       <h2>To:</h1> <label> <input id="publishBefore-to" value='2016-06-05' type="text"/> </label>
+        <button id="search-button" >Search</button>
+     
+    <div id="outer-search">
+    <div id="search-container">
+    </div>
+    </div>
+    
+  </body>
+</html>
